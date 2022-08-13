@@ -1,0 +1,14 @@
+<b *ngIf="$loading | async">Loading....</b>
+<div *ngFor="let movie of $movies| async">
+    <div class="card" style="width: 21rem;">
+        <div class="card-body">
+            <h5 class="card-title">
+                <p>{{movie.title}}</p>
+            </h5>
+            <img src="{{movie.poster}}" class="card-img-top" alt="...">
+            <div class="pill-box">
+                <span class="badge rounded-pill text-bg-secondary" *ngFor="let item of movie.genre">{{item}}</span>
+            </div>
+        </div>
+    </div>
+</div>
