@@ -40,7 +40,7 @@ export class MenuHeaderComponent implements OnInit {
     switch (url) {
       case '/movies':
         return 'Peliculas';
-      case 'new-film':
+      case '/movies/new-movie':
         this.returnPageVisible = true;
         return 'Nueva pelicula';
       case 'view-movies':

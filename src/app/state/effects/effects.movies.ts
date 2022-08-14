@@ -25,6 +25,13 @@ export class MoviesEffects {
     )
   );
 
+  addMovie$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType('[Movie List] Add Movie'),
+      mergeMap((movie) => this.moviesService.addMovie(movie))
+    )
+  );
+
   constructor(
     private actions$: Actions,
     private moviesService: MoviesService

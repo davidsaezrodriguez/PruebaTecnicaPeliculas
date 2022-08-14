@@ -17,12 +17,8 @@ export const deleteMovies = createAction(
 );
 
 
-// export const addMovie = createAction(
-//   '[Movie List] Add Movie',
-//   props<{ movieId: string }>()
-// );
+export const addMovie = createAction(
+  '[Movie List] Add Movie',
+  props<{ movie: Movie }>()
+);
  
-// export const removeMovie = createAction(
-//   '[Movie Collection] Remove Movie',
-//   props<{ movieId: string }>()
-// );

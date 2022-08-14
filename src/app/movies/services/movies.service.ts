@@ -19,4 +19,7 @@ export class MoviesService {
   removeMovie(id:any):Observable<any> {
     return this.http.delete('http://localhost:3000/movies/'+id.movieId)
   }
+  addMovie(movie:any):Observable<any> {
+    return this.http.post<Movie>('http://localhost:3000/movies/',movie.movie)
+  }
 }
