@@ -11,9 +11,12 @@ import { ROOT_REDUCERS } from './state/app.state';
 import { EffectsModule } from '@ngrx/effects';
 import { MoviesEffects } from './state/effects/effects.movies';
 import { MenuHeaderComponent } from './menu-header/menu-header.component';
+import { ViewMoviesComponent } from './movies/view-movies/view-movies.component';
+import { ConvertDurationPipe } from './pipes/convert-duration.pipe';
+import { ActorsEffects } from './state/effects/effects.actors';
 
 @NgModule({
-  declarations: [AppComponent, MoviesListComponent, MenuHeaderComponent],
+  declarations: [AppComponent, MoviesListComponent, MenuHeaderComponent, ViewMoviesComponent, ConvertDurationPipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,7 +27,7 @@ import { MenuHeaderComponent } from './menu-header/menu-header.component';
     StoreDevtoolsModule.instrument({
       name: 'TEST'
     }),
-    EffectsModule.forRoot([MoviesEffects])
+    EffectsModule.forRoot([MoviesEffects,ActorsEffects])
     
   ],
   providers: [],

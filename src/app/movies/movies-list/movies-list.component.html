@@ -1,11 +1,11 @@
 <b *ngIf="$loading | async">Loading....</b>
 <div *ngFor="let movie of $movies| async">
-    <div class="card" style="width: 21rem;">
+    <div class="card" style="width: 21rem;" [routerLink]="['view-movies',movie.id]">
         <div class="card-body">
             <h5 class="card-title">
                 <p>{{movie.title}}</p>
             </h5>
-            <img src="{{movie.poster}}" class="card-img-top" alt="...">
+            <img src="{{movie.poster}}" class="card-img-top" alt="Poster">
             <div class="pill-box">
                 <span class="badge rounded-pill text-bg-secondary" *ngFor="let item of movie.genre">{{item}}</span>
             </div>

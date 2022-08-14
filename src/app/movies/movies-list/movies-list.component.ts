@@ -5,6 +5,7 @@ import { loadMovies } from '../../state/actions/actions.movies';
 import { selectListMovies, selectLoadingMovies } from 'src/app/state/selectors/selectors.movies';
 import { AppState } from 'src/app/state/app.state';
 import { Movie } from 'src/app/models/movies.interface';
+import { loadActors } from 'src/app/state/actions/actions.actors';
 
 @Component({
   selector: 'app-movies-list',
@@ -21,6 +22,8 @@ export class MoviesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(loadMovies());
+    this.store.dispatch(loadActors());
+
 
     this.$loading = this.store.select(selectLoadingMovies);
     this.$movies = this.store.select(selectListMovies);

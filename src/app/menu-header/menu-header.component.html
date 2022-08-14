@@ -24,7 +24,7 @@
         </div>
       </div>
       <i class="bi bi-arrow-left-circle-fill" *ngIf="returnPageVisible" (click)="goBack()"></i>
-      <h5>{{namePage}}</h5>
+      <h5 *ngIf="namePage">{{namePage}}</h5>
     </div>
     
   </nav>
