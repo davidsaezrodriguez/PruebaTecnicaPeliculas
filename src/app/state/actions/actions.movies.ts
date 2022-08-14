@@ -11,6 +11,12 @@ export const loadedMovies = createAction(
     props<{ movies: Movie[]}>()
 );
 
+export const deleteMovies = createAction(
+    '[Movie API] Delete Movie',
+    props<{ movieId: number}>()
+);
+
+
 // export const addMovie = createAction(
 //   '[Movie List] Add Movie',
 //   props<{ movieId: string }>()

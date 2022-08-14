@@ -1,0 +1,41 @@
+<div class="container-fluid">
+
+    <div class="row ">
+        <div class="col-12 d-flex justify-content-center">
+            <img src="{{movie?.poster}}" class="card-img-top" alt="Poster">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 text-left">
+            <h5 class="col-12">Puntuación</h5>
+            {{movie?.imdbRating}}
+        </div>
+        <div class="col-6 text-right">
+            <h5 class="col-12">Duración</h5>
+            {{movie && movie.duration ? (movie.duration | convertDuration) : 0}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h5 class="col-12">Actores</h5>
+            <hr>
+            <span class="col-12" *ngFor="let item of movie?.actorsName">{{item.first_name}}
+                {{item.last_name}}<br></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h5 class="col-12">Géneros</h5>
+            <hr>
+
+            <div class="pill-box">
+                <span class="badge rounded-pill text-bg-secondary" *ngFor="let item of movie?.genre">{{item}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="btn-flotante">
+    <i class="bi bi-trash3-fill" (click)="deleteMovie(movie && movie.id ? movie.id : 0)"> </i>
+
+</div>

@@ -15,4 +15,8 @@ export class MoviesService {
   getListMovies(): Observable<any>{
     return this.http.get('http://localhost:3000/movies')
   }
+
+  removeMovie(id:any):Observable<any> {
+    return this.http.delete('http://localhost:3000/movies/'+id.movieId)
+  }
 }
