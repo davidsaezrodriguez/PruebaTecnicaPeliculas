@@ -43,7 +43,7 @@ export class ViewMoviesComponent implements OnInit {
             .select(selectListActors)
             .pipe(
               map((actors: Actor[]) => {
-                this.movie?.actorsName.push(actors.filter(
+                this.movie?.actorsName?.push(actors.filter(
                   (actor: Actor) => actor.id == element
                 )[0]);
               })

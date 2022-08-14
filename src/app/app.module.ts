@@ -14,9 +14,11 @@ import { MenuHeaderComponent } from './menu-header/menu-header.component';
 import { ViewMoviesComponent } from './movies/view-movies/view-movies.component';
 import { ConvertDurationPipe } from './pipes/convert-duration.pipe';
 import { ActorsEffects } from './state/effects/effects.actors';
+import { MoviesNewComponent } from './movies/movies-new/movies-new.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, MoviesListComponent, MenuHeaderComponent, ViewMoviesComponent, ConvertDurationPipe],
+  declarations: [AppComponent, MoviesListComponent, MenuHeaderComponent, ViewMoviesComponent, ConvertDurationPipe, MoviesNewComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,8 +29,9 @@ import { ActorsEffects } from './state/effects/effects.actors';
     StoreDevtoolsModule.instrument({
       name: 'TEST'
     }),
-    EffectsModule.forRoot([MoviesEffects,ActorsEffects])
-    
+    EffectsModule.forRoot([MoviesEffects,ActorsEffects]),
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,6 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 
 import {
+  addMovie,
   deleteMovies,
   loadedMovies,
   loadMovies,
@@ -25,5 +26,13 @@ export const moviesReducer = createReducer(
     ...state,
     loading: false,
     moviesList: state.moviesList.filter((element) => element.id !== movieId),
+  })),
+  on(addMovie,(state, { movie }) => ({
+    ...state,
+    loading: false,
+    moviesList: {
+      ...state.moviesList,
+      movie
+    },
   }))
 );

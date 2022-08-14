@@ -2,7 +2,7 @@ import { Actor } from "./actors.interface";
 
 export interface Movie {
     actors:     number[];
-    actorsName : Actor[];
+    actorsName ?: Actor[];
     duration:   number;
     genre:      string[];
     id:         number;

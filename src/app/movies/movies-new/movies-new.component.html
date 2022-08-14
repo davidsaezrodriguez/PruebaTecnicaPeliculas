@@ -1,0 +1,71 @@
+<div class="container">
+
+    <div class="starter-template">
+
+        <div class="row">
+
+            <div class="col-md-12 mt-5">
+
+                <h1>Nueva pelicula</h1>
+
+                <form [formGroup]="pelicula" (ngSubmit)="onSubmit(pelicula.value)">
+                    <div class="form-group">
+                        <label>Titulo</label>
+                        <input type="text" formControlName="titulo" class="form-control"
+                             />
+                    </div>
+                    <div class="form-group">
+                        <label>Poster(url)</label>
+                        <input type="text" formControlName="poster" class="form-control"
+                             />
+                    </div>
+                    <div class="form-group">
+                        <label>Generos</label>
+                        <select class="form-select" multiple class="form-control" formControlName="generos">
+
+                            <option value="comedy">Comedy</option>
+                            <option value="musical">Musical</option>
+                            <option value="romance">Romance</option>
+                            <option value="horror">Horror</option>
+                            <option value="thriller">Thriller</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Actor</label>
+                        <select class="form-select" multiple class="form-control" formControlName="actores" *ngIf="actors.length > 0">
+
+                            <option *ngFor="let item of actors" value="{{item.id}}">{{item.first_name}}
+                                {{item.last_name}}</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Año</label>
+                        <input type="number" formControlName="año" class="form-control"  max="4"
+                             />
+                    </div>
+                    <div class="form-group">
+                        <label>Duracion (min)</label>
+                        <input type="number" formControlName="duracion" class="form-control"
+                             />
+                    </div>
+                    <div class="form-group">
+                        <label>Puntuacion</label>
+                        <input type="number" formControlName="puntuacion" class="form-control"
+                             />
+                    </div>
+                    <div class="form-group mt-4">
+                        <button class="btn btn-primary">Guardar</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
