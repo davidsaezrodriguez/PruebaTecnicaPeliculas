@@ -1,0 +1,30 @@
+<nav class="navbar bg-light ">
+    <div class="container-fluid">
+        
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <h3>Menu</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/movies" routerLinkActive="active" [routerLink]="['/movies']" >Peliculas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Actores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Estudios</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+      <i class="bi bi-arrow-left-circle-fill" *ngIf="returnPageVisible" (click)="goBack()"></i>
+      <h5>{{namePage}}</h5>
+    </div>
+    
+  </nav>

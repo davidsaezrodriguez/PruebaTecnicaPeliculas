@@ -10,9 +10,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ROOT_REDUCERS } from './state/app.state';
 import { EffectsModule } from '@ngrx/effects';
 import { MoviesEffects } from './state/effects/effects.movies';
+import { MenuHeaderComponent } from './menu-header/menu-header.component';
 
 @NgModule({
-  declarations: [AppComponent, MoviesListComponent],
+  declarations: [AppComponent, MoviesListComponent, MenuHeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
